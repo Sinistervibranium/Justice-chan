@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Justice Chan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Courier New', monospace;
+      background-color: #0d0d0d;
+      color: #f2f2f2;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #444;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .arabic {
+      font-size: 1.5rem;
+      margin-top: 5px;
+      color: #00ffcc;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background-color: #111;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .section {
+      padding: 20px;
+      border-bottom: 1px solid #333;
+    }
+
+    textarea, input, iframe {
+      width: 100%;
+      background: #1a1a1a;
+      color: white;
+      border: 1px solid #333;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #00ffcc;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .post {
+      background: #111;
+      padding: 10px;
+      margin-top: 10px;
+      border-left: 4px solid #00ffcc;
+    }
+
+    iframe {
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Justice Chan</h1>
+  <div class="arabic">الشيخ محمد غوث</div>
+</header>
+
+<nav>
+  <a href="#chan">Chan Board</a>
+  <a href="#tweets">Micro Posts</a>
+  <a href="#videos">Video Zone</a>
+  <a href="#search">Search</a>
+</nav>
+
+<section class="section" id="chan">
+  <h2>Anonymous Justice Posts</h2>
+  <textarea placeholder="Speak truth, reveal injustice..."></textarea>
+  <button>Post Anonymously</button>
+  <div class="post">Example: No justice, no peace.</div>
+</section>
+
+<section class="section" id="tweets">
+  <h2>Micro Posts</h2>
+  <input type="text" placeholder="Share quick thoughts...">
+  <button>Tweet</button>
+  <div class="post">@anon: We demand answers!</div>
+</section>
+
+<section class="section" id="videos">
+  <h2>Video Uploads / Embeds</h2>
+  <input type="text" placeholder="Paste YouTube embed link here">
+  <button>Embed</button>
+  <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+</section>
+
+<section class="section" id="search">
+  <h2>Browse / Search</h2>
+  <input type="text" id="searchBar" placeholder="Search the web anonymously...">
+  <button onclick="search()">Go</button>
+  <iframe id="browserFrame"></iframe>
+</section>
+
+<script>
+  function search() {
+    const query = document.getElementById('searchBar').value;
+    document.getElementById('browserFrame').src = 'https://duckduckgo.com/?q=' + encodeURIComponent(query);
+  }
+</script>
+
+</body>
+  </html>
